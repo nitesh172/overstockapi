@@ -22,7 +22,7 @@ app.post("/products", (req, res) => {
     })
 })
 
-app.get("/products", async (req, res) => {
+app.get("/", async (req, res) => {
     try {
         const productsData = await Product.find();
         console.log(productsData);
