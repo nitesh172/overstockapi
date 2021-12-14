@@ -8,9 +8,9 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
-// app.get("/", (req, res) => {
-//     res.send("hello from the other sideby Nitesh");
-// });
+app.get("/", (req, res) => {
+    res.send("hello from the other sideby Nitesh");
+});
 
 app.post("/products", (req, res) => {
     console.log(req.body);
@@ -22,7 +22,7 @@ app.post("/products", (req, res) => {
     })
 })
 
-app.get("/", async (req, res) => {
+app.get("/products", async (req, res) => {
     try {
         const productsData = await Product.find();
         console.log(productsData);
