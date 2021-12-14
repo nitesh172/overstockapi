@@ -18,32 +18,67 @@
   <body>
     <div>
       <h1>Add Product</h1>
-      <input type="number" placeholder="id" id="id" />
+      <input type="text" placeholder="imgURl" id="imgURl"/>
+      <input type="text" placeholder="imgURl1" id="imgURl1" />
+      <input type="text" placeholder="imgURl2" id="imgURl2" />
+      <input type="text" placeholder="imgURl3" id="imgURl3" />
+      <input type="text" placeholder="imgURl4" id="imgURl4" />
+      <input type="text" placeholder="imgURl5" id="imgURl5" />
+
 
       <input type="name" placeholder="name" id="name" />
 
+      <input type="number" placeholder="rating" id="rating" />
+
+      <input type="text" placeholder="color1" id="color1"/>
+      <input type="text" placeholder="color2" id="color2"/>
+      <input type="text" placeholder="color3" id="color3"/>
+      <input type="text" placeholder="color4" id="color4"/>
+
       <input type="number" placeholder="price" id="price" />
+      <input type="text" placeholder="main catergory" value="Furniture" id="main_catergory"/>
+      <input type="text" placeholder="main sub catergory" id="main_sub_catergory"/>
+      <input type="text" placeholder="sub catergory" id="sub_catergory"/>
+      <input type="text" placeholder="catergory" id="catergory"/>
 
       <button onclick="addProduct()">Add Product</button>
     </div>
-
+<!-- 
     <div>
       <h1>Delete Product</h1>
 
       <input type="text" id="delete_id" placeholder="Enter id to Delete" />
 
       <button onclick="deleteProduct()">Delete Product</button>
-    </div>
+    </div> -->
   </body>
 </html>
 
 <script>
     async function addProduct() {
         var data = {
-            imageURL: document.getElementById("name").value,
+            imageURL: document.getElementById("imgURl").value,
+            img1: document.getElementById("imgURl1").value,
+            img2: document.getElementById("imgURl2").value,
+            img3: document.getElementById("imgURl3").value,
+            img4: document.getElementById("imgURl4").value,
+            img5: document.getElementById("imgURl5").value,
+            name: document.getElementById("name").value,
+            rating: document.getElementById("rating").value,
+            color: [
+                document.getElementById("color1").value,
+                document.getElementById("color2").value,
+                document.getElementById("color3").value,
+                document.getElementById("color4").value,
+            ],
+            price: document.getElementById("price").value,
+            main_catergory: document.getElementById("main_catergory").value,
+            main_sub_catergory: document.getElementById("main_sub_catergory").value,
+            sub_catergory: document.getElementById("sub_catergory").value,
+            catergory: document.getElementById("catergory").value,
         }
         
-        let url = "https://webapp-try.herokuapp.com"
+        let url = "https://webapp-try.herokuapp.com/products"
 
         data = JSON.stringify(data);
         console.log(data);
@@ -53,9 +88,6 @@
             body: data,
             headers: {
                 "Content-Type": "application/json",
-                "Access-Control-Allow-Headers" : "Content-Type",
-                "Access-Control-Allow-Origin": "https://webapp-try.herokuapp.com",
-                "Access-Control-Allow-Methods": "POST,GET"
             }
         });
 
