@@ -1,0 +1,80 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    div {
+      width: 13%;
+    }
+    input,
+    button {
+      margin-top: 10px;
+    }
+  </style>
+  <body>
+    <div>
+      <h1>Add Product</h1>
+      <input type="number" placeholder="id" id="id" />
+
+      <input type="name" placeholder="name" id="name" />
+
+      <input type="number" placeholder="price" id="price" />
+
+      <button onclick="addProduct()">Add Product</button>
+    </div>
+
+    <div>
+      <h1>Delete Product</h1>
+
+      <input type="text" id="delete_id" placeholder="Enter id to Delete" />
+
+      <button onclick="deleteProduct()">Delete Product</button>
+    </div>
+  </body>
+</html>
+
+<script>
+    async function addProduct() {
+        var data = {
+            imageURL: document.getElementById("name").value,
+        }
+        
+        let url = "https://webapp-try.herokuapp.com"
+
+        data = JSON.stringify(data);
+        console.log(data);
+
+        let response = await fetch(url, {
+            method: 'POST',
+            body: data,
+            headers: {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Headers" : "Content-Type",
+                "Access-Control-Allow-Origin": "https://webapp-try.herokuapp.com",
+                "Access-Control-Allow-Methods": "POST,GET"
+            }
+        });
+
+        let d = await response.json();
+        console.log(d);
+    }
+
+
+    // async function deleteProduct() {
+    //     const id = document.getElementById("delete_id").value;
+
+    //     let reponse = await fetch(`http://127.0.0.1:5000/api/products/${id}`, {
+    //         method: 'DELETE',
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         }
+    //     })
+
+    //     let d = await response.json();
+    //     console.log(d);
+    // }
+</script>

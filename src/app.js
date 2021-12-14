@@ -4,6 +4,10 @@ const Product = require("./models/products")
 const app = express();
 const port = process.env.PORT || 3000; 
 
+var cors = require('cors')
+ 
+app.use(cors())
+
 // create a new product
 
 app.use(express.json());
