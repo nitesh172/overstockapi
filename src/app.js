@@ -5,7 +5,7 @@ const Popular = require("./models/popular");
 const app = express();
 const port = process.env.PORT || 3000;
 
-var cors = require("cors");
+const cors = require("cors");
 
 app.use(cors());
 
@@ -32,7 +32,7 @@ app.post("/products", (req, res) => {
 
 app.post("/popular", (req, res) => {
   console.log(req.body);
-  const pop = new Popular(req.body);
+  const pop = new Popular(req.body());
   pop
     .save()
     .then(() => {
@@ -55,7 +55,7 @@ app.get("/products", async (req, res) => {
 
 app.get("/popular", async (req, res) => {
   try {
-    const popularData = await Product.find();
+    const popularData = await Popular.find();
     console.log(popularData);
     res.send(popularData);
   } catch (error) {

@@ -63,6 +63,6 @@ const popularSchema = new mongoose.Schema({
 
 // we will create a new collection
 
-const Popular = new mongoose.model("Popular", productSchema);
+const Popular = new mongoose.model("Popular", popularSchema);
 
 module.exports = Popular;
