@@ -32,7 +32,7 @@ app.post("/products", (req, res) => {
 
 app.post("/popular", (req, res) => {
   console.log(req.body);
-  const pop = new Popular(req.body());
+  const pop = new Popular(req.body);
   pop
     .save()
     .then(() => {
