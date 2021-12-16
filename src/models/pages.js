@@ -21,7 +21,6 @@ const pageSchema = new mongoose.Schema({
   text1: {
     type: String,
     required: true,
-    minlength: 10,
   },
   text2: {
     type: String,
@@ -38,78 +37,6 @@ const pageSchema = new mongoose.Schema({
   catergory: {
     type: Array,
     required: true,
-    // c1: {
-    //   type: Object,
-    //   required: true,
-    //   name: { type: String, required: true },
-    //   imgUrl: { type: String, required: true },
-    // },
-    // c2: {
-    //   type: Object,
-    //   required: true,
-    //   name: { type: String, required: true },
-    //   imgUrl: { type: String, required: true },
-    // },
-    // c3: {
-    //   type: Object,
-    //   required: true,
-    //   name: { type: String, required: true },
-    //   imgUrl: { type: String, required: true },
-    // },
-    // c4: {
-    //   type: Object,
-    //   required: true,
-    //   name: { type: String, required: true },
-    //   imgUrl: { type: String, required: true },
-    // },
-    // c5: {
-    //   type: Object,
-    //   required: true,
-    //   name: { type: String, required: true },
-    //   imgUrl: { type: String, required: true },
-    // },
-    // c6: {
-    //   type: Object,
-    //   required: true,
-    //   name: { type: String, required: true },
-    //   imgUrl: { type: String, required: true },
-    // },
-    // c7: {
-    //   type: Object,
-    //   required: true,
-    //   name: { type: String, required: true },
-    //   imgUrl: { type: String, required: true },
-    // },
-    // c8: {
-    //   type: Object,
-    //   required: true,
-    //   name: { type: String, required: true },
-    //   imgUrl: { type: String, required: true },
-    // },
-    // c9: {
-    //   type: Object,
-    //   required: true,
-    //   name: { type: String, required: true },
-    //   imgUrl: { type: String, required: true },
-    // },
-    // c10: {
-    //   type: Object,
-    //   required: true,
-    //   name: { type: String, required: true },
-    //   imgUrl: { type: String, required: true },
-    // },
-    // c11: {
-    //   type: Object,
-    //   required: true,
-    //   name: { type: String, required: true },
-    //   imgUrl: { type: String, required: true },
-    // },
-    // c12: {
-    //   type: Object,
-    //   required: true,
-    //   name: { type: String, required: true },
-    //   imgUrl: { type: String, required: true },
-    // },
   },
   imb1: {
     type: Object,
@@ -128,78 +55,6 @@ const pageSchema = new mongoose.Schema({
   moreCategory: {
     type: Array,
     required: true,
-    // c1: {
-    //   type: Object,
-    //   required: true,
-    //   name: { type: String, required: true },
-    //   imgUrl: { type: String, required: true },
-    // },
-    // c2: {
-    //   type: Object,
-    //   required: true,
-    //   name: { type: String, required: true },
-    //   imgUrl: { type: String, required: true },
-    // },
-    // c3: {
-    //   type: Object,
-    //   required: true,
-    //   name: { type: String, required: true },
-    //   imgUrl: { type: String, required: true },
-    // },
-    // c4: {
-    //   type: Object,
-    //   required: true,
-    //   name: { type: String, required: true },
-    //   imgUrl: { type: String, required: true },
-    // },
-    // c5: {
-    //   type: Object,
-    //   required: true,
-    //   name: { type: String, required: true },
-    //   imgUrl: { type: String, required: true },
-    // },
-    // c6: {
-    //   type: Object,
-    //   required: true,
-    //   name: { type: String, required: true },
-    //   imgUrl: { type: String, required: true },
-    // },
-    // c7: {
-    //   type: Object,
-    //   required: true,
-    //   name: { type: String, required: true },
-    //   imgUrl: { type: String, required: true },
-    // },
-    // c8: {
-    //   type: Object,
-    //   required: true,
-    //   name: { type: String, required: true },
-    //   imgUrl: { type: String, required: true },
-    // },
-    // c9: {
-    //   type: Object,
-    //   required: true,
-    //   name: { type: String, required: true },
-    //   imgUrl: { type: String, required: true },
-    // },
-    // c10: {
-    //   type: Object,
-    //   required: true,
-    //   name: { type: String, required: true },
-    //   imgUrl: { type: String, required: true },
-    // },
-    // c11: {
-    //   type: Object,
-    //   required: true,
-    //   name: { type: String, required: true },
-    //   imgUrl: { type: String, required: true },
-    // },
-    // c12: {
-    //   type: Object,
-    //   required: true,
-    //   name: { type: String, required: true },
-    //   imgUrl: { type: String, required: true },
-    // },
   },
 });
 
