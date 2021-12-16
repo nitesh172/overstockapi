@@ -2,6 +2,7 @@ const express = require("express");
 require("./db/conn");
 const Product = require("./models/products");
 const Popular = require("./models/popular");
+const Page = require("./models/pages");
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -9,14 +10,13 @@ const cors = require("cors");
 
 app.use(cors());
 
-// create a new product
-
 app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send("hello from the other sideby Nitesh");
 });
 
+// create a new product
 app.post("/products", (req, res) => {
   console.log(req.body);
   const pro = new Product(req.body);
@@ -30,6 +30,7 @@ app.post("/products", (req, res) => {
     });
 });
 
+// create a popular
 app.post("/popular", (req, res) => {
   console.log(req.body);
   const pop = new Popular(req.body);
@@ -43,6 +44,20 @@ app.post("/popular", (req, res) => {
     });
 });
 
+// create a page
+app.post("/page", (req, res) => {
+  console.log(req.body);
+  const pp = new Page(req.body);
+  pp.save()
+    .then(() => {
+      res.status(201).send(pp);
+    })
+    .catch((e) => {
+      res.status(201).send(e);
+    });
+});
+
+// get prodoucts
 app.get("/products", async (req, res) => {
   try {
     const productsData = await Product.find();
@@ -53,11 +68,38 @@ app.get("/products", async (req, res) => {
   }
 });
 
+// get popular
 app.get("/popular", async (req, res) => {
   try {
     const popularData = await Popular.find();
     console.log(popularData);
     res.send(popularData);
+  } catch (error) {
+    res.send(error);
+  }
+});
+
+// get Pages
+app.get("/page", async (req, res) => {
+  try {
+    const pagesData = await Page.find();
+    console.log(pagesData);
+    res.send(pagesData);
+  } catch (error) {
+    res.send(error);
+  }
+});
+
+// get individaul Pages
+app.get("/page/:pageName", async (req, res) => {
+  try {
+    const pageName = req.params.pageName;
+    const pageData = await Page.findOne(pageName);
+    if (!pageData) {
+      return res.status(404).send();
+    } else {
+      res.send(pageData);
+    }
   } catch (error) {
     res.send(error);
   }
