@@ -93,8 +93,9 @@ app.get("/page", async (req, res) => {
 // get individaul Pages
 app.get("/page/:pageName", async (req, res) => {
   try {
-    const pageName = req.params.pageName;
+    const pageName = req.params;
     const pageData = await Page.findOne(pageName);
+    console.log(pageData);
     if (!pageData) {
       return res.status(404).send();
     } else {
