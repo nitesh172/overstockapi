@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
       Url:https://overstockapi.herokuapp.com/page/pagename <br />Product By
       category Url:https://overstockapi.herokuapp.com/products/category=<br />
       Product By sub category
-      Url:https://overstockapi.herokuapp.com/products/subCategory= b r <br />
+      Url:https://overstockapi.herokuapp.com/products/subCategory=  <br />
       Product By main sub category
       Url:https://overstockapi.herokuapp.com/products/mainSubCategory= Product
       <br />
