@@ -13,17 +13,17 @@ app.use(cors())
 app.use(express.json())
 
 app.get("/", (req, res) => {
-  res.send(`hello from the other sideby Nitesh 
-  Base Url: https://overstockapi.herokuapp.com
-  Products Url:https://overstockapi.herokuapp.com/products
-  Popular Url:https://overstockapi.herokuapp.com/popular
-  Page Url:https://overstockapi.herokuapp.com/page
-  Page Individual Url:https://overstockapi.herokuapp.com/page/pagename
-  Product By category Url:https://overstockapi.herokuapp.com/products/category=
-  Product By sub category Url:https://overstockapi.herokuapp.com/products/subCategory=
-  Product By main sub category Url:https://overstockapi.herokuapp.com/products/mainSubCategory=
-  Product By main category Url:https://overstockapi.herokuapp.com/products/mainCategory=
-  Product By id Url:https://overstockapi.herokuapp.com/products/id=
+  res.send(`hello from the other sideby Nitesh \n
+  Base Url: https://overstockapi.herokuapp.com \n
+  Products Url:https://overstockapi.herokuapp.com/products \n
+  Popular Url:https://overstockapi.herokuapp.com/popular \n
+  Page Url:https://overstockapi.herokuapp.com/page \n
+  Page Individual Url:https://overstockapi.herokuapp.com/page/pagename \n 
+  Product By category Url:https://overstockapi.herokuapp.com/products/category= \n
+  Product By sub category Url:https://overstockapi.herokuapp.com/products/subCategory= \n
+  Product By main sub category Url:https://overstockapi.herokuapp.com/products/mainSubCategory= \n
+  Product By main category Url:https://overstockapi.herokuapp.com/products/mainCategory= \n
+  Product By id Url:https://overstockapi.herokuapp.com/products/id= \n
   Product By name Url:https://overstockapi.herokuapp.com/products/name=`)
 })
 
