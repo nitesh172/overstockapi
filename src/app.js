@@ -3,6 +3,7 @@ require("./db/conn")
 const Product = require("./models/products")
 const Popular = require("./models/popular")
 const Page = require("./models/pages")
+const index1 = require("./index1.html")
 const app = express()
 const port = process.env.PORT || 3000
 
@@ -13,18 +14,7 @@ app.use(cors())
 app.use(express.json())
 
 app.get("/", (req, res) => {
-  res.send(`hello from the other sideby Nitesh \n
-  Base Url: https://overstockapi.herokuapp.com \n
-  Products Url:https://overstockapi.herokuapp.com/products \n
-  Popular Url:https://overstockapi.herokuapp.com/popular \n
-  Page Url:https://overstockapi.herokuapp.com/page \n
-  Page Individual Url:https://overstockapi.herokuapp.com/page/pagename \n 
-  Product By category Url:https://overstockapi.herokuapp.com/products/category= \n
-  Product By sub category Url:https://overstockapi.herokuapp.com/products/subCategory= \n
-  Product By main sub category Url:https://overstockapi.herokuapp.com/products/mainSubCategory= \n
-  Product By main category Url:https://overstockapi.herokuapp.com/products/mainCategory= \n
-  Product By id Url:https://overstockapi.herokuapp.com/products/id= \n
-  Product By name Url:https://overstockapi.herokuapp.com/products/name=`)
+  res.send(index1)
 })
 
 // create a new product
