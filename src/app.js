@@ -13,30 +13,18 @@ app.use(cors())
 app.use(express.json())
 
 app.get("/", (req, res) => {
-  res.send("hello from the other sideby Nitesh")
-  res.send("Base Url: https://overstockapi.herokuapp.com")
-  res.send("Products Url:https://overstockapi.herokuapp.com/products")
-  res.send("Popular Url:https://overstockapi.herokuapp.com/popular")
-  res.send("Page Url:https://overstockapi.herokuapp.com/page")
-  res.send(
-    "Page Individual Url:https://overstockapi.herokuapp.com/page/pagename"
-  )
-  res.send(
-    "Product By category Url:https://overstockapi.herokuapp.com/products/category="
-  )
-  res.send(
-    "Product By sub category Url:https://overstockapi.herokuapp.com/products/subCategory="
-  )
-  res.send(
-    "Product By main sub category Url:https://overstockapi.herokuapp.com/products/mainSubCategory="
-  )
-  res.send(
-    "Product By main category Url:https://overstockapi.herokuapp.com/products/mainCategory="
-  )
-  res.send("Product By id Url:https://overstockapi.herokuapp.com/products/id=")
-  res.send(
-    "Product By name Url:https://overstockapi.herokuapp.com/products/name="
-  )
+  res.send(`hello from the other sideby Nitesh 
+  Base Url: https://overstockapi.herokuapp.com
+  Products Url:https://overstockapi.herokuapp.com/products
+  Popular Url:https://overstockapi.herokuapp.com/popular
+  Page Url:https://overstockapi.herokuapp.com/page
+  Page Individual Url:https://overstockapi.herokuapp.com/page/pagename
+  Product By category Url:https://overstockapi.herokuapp.com/products/category=
+  Product By sub category Url:https://overstockapi.herokuapp.com/products/subCategory=
+  Product By main sub category Url:https://overstockapi.herokuapp.com/products/mainSubCategory=
+  Product By main category Url:https://overstockapi.herokuapp.com/products/mainCategory=
+  Product By id Url:https://overstockapi.herokuapp.com/products/id=
+  Product By name Url:https://overstockapi.herokuapp.com/products/name=`)
 })
 
 // create a new product
