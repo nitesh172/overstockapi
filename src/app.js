@@ -105,7 +105,7 @@ app.get("/page/:pageName", async (req, res) => {
     res.send(error)
   }
 })
-// get individaul Pages By Catergory
+// get products By Catergory
 app.get("/products/category=:sub_catergory", async (req, res) => {
   try {
     const sub_catergory = req.params
@@ -121,6 +121,100 @@ app.get("/products/category=:sub_catergory", async (req, res) => {
   }
 })
 
+// get products By Catergory
+app.get("/products/category=:catergory", async (req, res) => {
+  try {
+    const catergory = req.params
+    const catData = await Product.find(catergory)
+    console.log(catData)
+    if (!catData) {
+      return res.status(404).send()
+    } else {
+      res.send(catData)
+    }
+  } catch (error) {
+    res.send(error)
+  }
+})
+
+// get products By subCatergory
+app.get("/products/subCategory=:sub_catergory", async (req, res) => {
+  try {
+    const sub_catergory = req.params
+    const subCatData = await Product.find(sub_catergory)
+    console.log(subCatData)
+    if (!subCatData) {
+      return res.status(404).send()
+    } else {
+      res.send(subCatData)
+    }
+  } catch (error) {
+    res.send(error)
+  }
+})
+
+// get products By main Sub Catergory
+app.get("/products/mainSubCategory=:main_sub_catergory", async (req, res) => {
+  try {
+    const main_sub_catergory = req.params
+    const mainSubCatData = await Product.find(main_sub_catergory)
+    console.log(mainSubCatData)
+    if (!mainSubCatData) {
+      return res.status(404).send()
+    } else {
+      res.send(mainSubCatData)
+    }
+  } catch (error) {
+    res.send(error)
+  }
+})
+// get products By main Catergory
+app.get("/products/mainCategory=:main_catergory", async (req, res) => {
+  try {
+    const main_catergory = req.params
+    const mainCatData = await Product.find(main_catergory)
+    console.log(mainCatData)
+    if (!mainCatData) {
+      return res.status(404).send()
+    } else {
+      res.send(mainCatData)
+    }
+  } catch (error) {
+    res.send(error)
+  }
+})
+
+// get products By name
+app.get("/products/name=:name", async (req, res) => {
+  try {
+    const name = req.params
+    const nameData = await Product.find(name)
+    console.log(nameData)
+    if (!nameData) {
+      return res.status(404).send()
+    } else {
+      res.send(nameData)
+    }
+  } catch (error) {
+    res.send(error)
+  }
+})
+
+//get products Byid
+app.get("/products/id=:_id", async (req, res) => {
+  try {
+    const _id = req.params
+    const _idData = await Product.findById(_id)
+    console.log(_idData)
+    if (!_idData) {
+      return res.status(404).send()
+    } else {
+      res.send(_idData)
+    }
+  } catch (error) {
+    res.send(error)
+  }
+})
 app.listen(port, () => {
   console.log(`connection is setup at ${port}`)
 })
