@@ -109,7 +109,7 @@ app.get("/page/:pageName", async (req, res) => {
 app.get("/products/category=:sub_catergory", async (req, res) => {
   try {
     const sub_catergory = req.params
-    const catData = await Product.findOne(sub_catergory)
+    const catData = await Product.find(sub_catergory)
     console.log(catData)
     if (!catData) {
       return res.status(404).send()
