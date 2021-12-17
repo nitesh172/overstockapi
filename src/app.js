@@ -14,6 +14,29 @@ app.use(express.json())
 
 app.get("/", (req, res) => {
   res.send("hello from the other sideby Nitesh")
+  res.send("Base Url: https://overstockapi.herokuapp.com")
+  res.send("Products Url:https://overstockapi.herokuapp.com/products")
+  res.send("Popular Url:https://overstockapi.herokuapp.com/popular")
+  res.send("Page Url:https://overstockapi.herokuapp.com/page")
+  res.send(
+    "Page Individual Url:https://overstockapi.herokuapp.com/page/pagename"
+  )
+  res.send(
+    "Product By category Url:https://overstockapi.herokuapp.com/products/category="
+  )
+  res.send(
+    "Product By sub category Url:https://overstockapi.herokuapp.com/products/subCategory="
+  )
+  res.send(
+    "Product By main sub category Url:https://overstockapi.herokuapp.com/products/mainSubCategory="
+  )
+  res.send(
+    "Product By main category Url:https://overstockapi.herokuapp.com/products/mainCategory="
+  )
+  res.send("Product By id Url:https://overstockapi.herokuapp.com/products/id=")
+  res.send(
+    "Product By name Url:https://overstockapi.herokuapp.com/products/name="
+  )
 })
 
 // create a new product
@@ -100,21 +123,6 @@ app.get("/page/:pageName", async (req, res) => {
       return res.status(404).send()
     } else {
       res.send(pageData)
-    }
-  } catch (error) {
-    res.send(error)
-  }
-})
-// get products By Catergory
-app.get("/products/category=:sub_catergory", async (req, res) => {
-  try {
-    const sub_catergory = req.params
-    const catData = await Product.find(sub_catergory)
-    console.log(catData)
-    if (!catData) {
-      return res.status(404).send()
-    } else {
-      res.send(catData)
     }
   } catch (error) {
     res.send(error)
